@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.square-widget {
+    font-family: 'Roboto', sans-serif;
+    color: #264B31;
+
+    background-color: #DCF7E4;
+    border-radius: 4rem;
+
+    width: 35rem;
+    height: 35rem;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+
+    h3 {
+        font-size: 3.5rem;
+        font-weight: 500;
+
+        margin: 0;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    p.weather-desc {
+        font-size: 1.4rem;
+    }
+
+    p.current-temp {
+        font-size: 8rem;
+        font-weight: 700;
+    }
+
+    p.max-temp {
+        font-size: 3rem;
+    }
+
+    p.min-temp {
+        color: #989898;
+        font-size: 3rem;
+    }
+
+    .degrees-symbol {
+        font-weight: 400;
+    }
+
+    .widget-top {
+        padding: 2.75rem;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .widget-bottom {
+        width: fit-content;
+        padding: 2.75rem;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .widget-bottom > div {
+        display: flex;
+        justify-content: space-between;
+    }
+}
