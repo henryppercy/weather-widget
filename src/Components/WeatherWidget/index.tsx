@@ -33,18 +33,14 @@ function WeatherWidget({ city }: WeatherWidgetProps) {
     const [resState, setResState] = useState(false);
 
 
-	const url = new URL('http://api.openweathermap.org/data/2.5/');
+	const url = new URL('http://api.openweathermap.org/data/2.5/weather?');
 
-
-
-	const api = {
-		key: 'fdc994dbae6033a54480084f24da04a0',
-		
-	}
-
+	url.searchParams.set('q', 'Berlin');
+	url.searchParams.set('units', 'metric');
+	
 	async function getWeatherData() {
 		try {
-			const response = await fetch(`${api.url}weather?q=San Miguel de Tucumán&units=metric&appid=${api.key}`);
+			const response = await fetch(url);
 			const data: weatherRes = await response.json();
 			setWeatherdata(data);
 			setResState(true);	
