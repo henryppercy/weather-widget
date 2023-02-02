@@ -32,9 +32,14 @@ function WeatherWidget({ city }: WeatherWidgetProps) {
 	const [weatherData, setWeatherdata] = useState<weatherRes>({ name: '', weather: [{ description: '', icon: '', id: 0, main: '' }], main: { feels_like: 0, humidity: 0, pressure: 0, temp: 0, temp_max: 0, temp_min: 0 }});
     const [resState, setResState] = useState(false);
 
+
+	const url = new URL('http://api.openweathermap.org/data/2.5/');
+
+
+
 	const api = {
 		key: 'fdc994dbae6033a54480084f24da04a0',
-		url: 'http://api.openweathermap.org/data/2.5/',
+		
 	}
 
 	async function getWeatherData() {
