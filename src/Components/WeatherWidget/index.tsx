@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import apiKey from '../../../keys/weatherApiKey';
 import './WeatherWidget.scss';
 
 type weather = {
@@ -34,6 +35,7 @@ function WeatherWidget({ city }: WeatherWidgetProps) {
 	const url = new URL('http://api.openweathermap.org/data/2.5/weather?');
 	url.searchParams.set('q', city);
 	url.searchParams.set('units', 'metric');
+	url.searchParams.set('appid', apiKey);
 	
 	async function getWeatherData() {
 		try {
@@ -45,6 +47,8 @@ function WeatherWidget({ city }: WeatherWidgetProps) {
 			console.log(error);
 		}
 	}
+
+	console.log(weatherData)
 
 	useEffect(() => {
 		if (city !== '') {
