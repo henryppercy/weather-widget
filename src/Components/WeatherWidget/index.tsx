@@ -48,8 +48,6 @@ function WeatherWidget({ city }: WeatherWidgetProps) {
 		}
 	}
 
-	console.log(weatherData)
-
 	useEffect(() => {
 		if (city !== '') {
 			getWeatherData();
