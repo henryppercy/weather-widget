@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './WeatherWidget.scss'
+import './WeatherWidget.scss';
 
 type weather = {
 	description: string,
@@ -26,7 +26,6 @@ type weatherRes = {
 type WeatherWidgetProps = {
 	city: string
 }
-
 
 function WeatherWidget({ city }: WeatherWidgetProps) {
 	const [weatherData, setWeatherdata] = useState<weatherRes>({ name: '', weather: [{ description: '', icon: '', id: 0, main: '' }], main: { feels_like: 0, humidity: 0, pressure: 0, temp: 0, temp_max: 0, temp_min: 0 }});
