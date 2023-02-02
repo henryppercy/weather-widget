@@ -1,0 +1,27 @@
+.weather-form {
+    label {
+        color: #DCF7E4;
+        font-size: 1.4rem;
+    }
+
+    input {
+        all: unset;
+        color: #DCF7E4;
+        font-size: 2rem;
+        font-weight: 600;
+        padding: 0.4rem 1rem;
+        border: 0.2rem solid #DCF7E4;
+        border-radius: 1rem 0 0 1rem;
+    }
+
+    button {
+        all: unset;
+        color: #303030;
+        background-color: #DCF7E4;
+        font-weight: 600;
+        font-size: 2rem;
+        padding: 0.4rem 1rem;
+        border: 0.2rem solid #DCF7E4;
+        border-radius: 0 1rem 1rem 0;
+    }
+}
