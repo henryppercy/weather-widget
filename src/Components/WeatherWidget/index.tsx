@@ -56,27 +56,27 @@ function WeatherWidget({ city }: WeatherWidgetProps) {
 		
 	return (
 		<>
-		{!resState ? (
-				<h2 className="loading">Loading...</h2>
-			) : (
-			<div className="square-widget">
-				<div className="widget-top">
+			{!resState ? (
+					<h2 className="loading">Loading...</h2>
+				) : (
+				<div className="square-widget">
+					<div className="widget-top">
+						<div>
+							<h3>{weatherData.name}</h3>
+							<p className="weather-desc">{weatherData.weather[0].main}</p>
+						</div>
+						<img src={`../public/images/${weatherData.weather[0].icon}.svg`} alt="Weather icon" />
+				</div>
+				<div className="widget-bottom">
+					<p className="current-temp">{weatherData.main.temp.toFixed()}<sup className="degrees-symbol">°</sup></p>
 					<div>
-						<h3>{weatherData.name}</h3>
-						<p className="weather-desc">{weatherData.weather[0].main}</p>
+						<p className="max-temp">{weatherData.main.temp_max.toFixed()}<sup className="degrees-symbol">°</sup></p>
+						<p className="min-temp">{weatherData.main.temp_min.toFixed()}<sup className="degrees-symbol">°</sup></p>
 					</div>
-					<img src={`../public/images/${weatherData.weather[0].icon}.svg`} alt="Weather icon" />
-			</div>
-			<div className="widget-bottom">
-				<p className="current-temp">{weatherData.main.temp.toFixed()}<sup className="degrees-symbol">°</sup></p>
-				<div>
-					<p className="max-temp">{weatherData.main.temp_max.toFixed()}<sup className="degrees-symbol">°</sup></p>
-					<p className="min-temp">{weatherData.main.temp_min.toFixed()}<sup className="degrees-symbol">°</sup></p>
 				</div>
 			</div>
-		</div>
-		)}
-	</>
+			)}
+		</>
 	);
 }
 

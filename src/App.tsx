@@ -16,7 +16,7 @@ function App() {
       <WeatherForm handleSubmit={handleSubmit} />
       <WeatherWidget city={cityState} />
     </div>
-  )
+  );
 }
 
 export default App
