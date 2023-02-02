@@ -32,10 +32,8 @@ function WeatherWidget({ city }: WeatherWidgetProps) {
 	const [weatherData, setWeatherdata] = useState<weatherRes>({ name: '', weather: [{ description: '', icon: '', id: 0, main: '' }], main: { feels_like: 0, humidity: 0, pressure: 0, temp: 0, temp_max: 0, temp_min: 0 }});
     const [resState, setResState] = useState(false);
 
-
 	const url = new URL('http://api.openweathermap.org/data/2.5/weather?');
-
-	url.searchParams.set('q', 'Berlin');
+	url.searchParams.set('q', city);
 	url.searchParams.set('units', 'metric');
 	
 	async function getWeatherData() {
@@ -43,15 +41,17 @@ function WeatherWidget({ city }: WeatherWidgetProps) {
 			const response = await fetch(url);
 			const data: weatherRes = await response.json();
 			setWeatherdata(data);
-			setResState(true);	
+			setResState(true);
 		} catch (error) {
 			console.log(error);
 		}
 	}
 
 	useEffect(() => {
-	  	getWeatherData();
-	}, []);
+		if (city !== '') {
+			getWeatherData();
+		}
+	}, [city]);
 		
 	return (
 		<>
